@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IBM Accounting Signature Generator</title>
+	<link href="styles.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>	
+	<link rel="shortcut icon" type="image/png" href="logo_hdx.png"/>
+	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600&display=swap" rel="stylesheet">
+	
+	<script type="text/javascript">		
+		function signature_Alert() {
+			/*mobileVal=document.getElementById('mobile').value;
+			
+			if(mobileVal.length < 1){
+				document.getElementById("submitButton").action = "signature_test.html"
+			}*/
+			document.getElementById("submitButton").action = "signature_test.html"
+			
+			/*if(mobileVal.length < 1){
+				document.getElementById("submitButton").action = "signature_test_nomobile.html";
+			} else {
+				document.getElementById("submitButton").action = "signature_test.html";
+			}*/	
+		}
+		
+		function showPreview(){
+		  var value = $('#webex').val().trim();
+		  value = value.replace("<", "&lt;");
+		  value = value.replace(">", "&gt;");
+		  a = "https://ibm.webex.com/meet/"
+		  b = a.concat(value)
+		  $('.preview').html(b);
+		}		
+
+		/* Text */
+		var ALERT_TITLE = "Information";
+		var ALERT_BUTTON_TEXT = "Ok";
+
+		if(document.getElementById) {
+			window.alert = function(txt) {
+				createCustomAlert(txt);
+			}	
+		}
+
+		function createCustomAlert(txt) {
+			d = document;
+
+			if(d.getElementById("modalContainer")) return;
+
+			mObj = d.getElementsByTagName("body")[0].appendChild(d.createElement("div"));
+			mObj.id = "modalContainer";
+			mObj.style.height = d.documentElement.scrollHeight + "px";
+			
+			alertObj = mObj.appendChild(d.createElement("div"));
+			alertObj.id = "alertBox";
+			if(d.all && !window.opera) alertObj.style.top = document.documentElement.scrollTop + "px";
+			alertObj.style.left = (d.documentElement.scrollWidth - alertObj.offsetWidth)/2 + "px";
+			alertObj.style.visiblity="visible";
+
+			h1 = alertObj.appendChild(d.createElement("h1"));
+			h1.appendChild(d.createTextNode(ALERT_TITLE));
+
+			msg = alertObj.appendChild(d.createElement("p"));
+			//msg.appendChild(d.createTextNode(txt));
+			msg.innerHTML = txt;
+
+			btn = alertObj.appendChild(d.createElement("a"));
+			btn.id = "closeBtn";
+			btn.appendChild(d.createTextNode(ALERT_BUTTON_TEXT));
+			btn.href = "#";
+			btn.focus();
+			btn.onclick = function() { removeCustomAlert();return false; }
+
+			alertObj.style.display = "block";
+		}
+
+		function removeCustomAlert() {
+			document.getElementsByTagName("body")[0].removeChild(document.getElementById("modalContainer"));
+		}
+		function ful(){
+		alert('Alert this pages');
+		}
+		/* Text */
+
+	</script>
+
+
+</head>
+
+<body style="background-color: #F7F9FA">
+<img src="http://imgfz.com/i/jyFGLYA.gif" alt="Intro" class="responsive">
+<div class="header_max">
+	<H1 style="color:#054ADA; border-bottom: 0px; padding-top: 13px; font-family: 'IBM Plex Sans', sans-serif; font-size: 26px">Signature Generator</span></H1>
+	<span class="sub-header">Welcome to the New IBM Accounting Signature Generator, on this page you will find a generator that allows you to create your own IBM signature. Let’s put this Signature Generator to work. Follow these three simple steps and setup your signature (<span style="color:#054ADA">Supports Google Chrome, Internet Explorer and Mozilla Firefox. Does not support Safari</span>):	
+    </span>
+
+	<div>
+		<img style="padding-right: 30px;" class="img-resize" src="https://ibm.box.com/shared/static/b4jz76anh5c6bht1g7tg74mq5702zq8h.png" alt="">
+		<img style="padding-right: 30px;" class="img-resize" src="https://ibm.box.com/shared/static/ugk2gntcw1wzlp6ogy8d239och8h1thh.png" alt="">
+		<a href="Instructions.html" target="_blank"><img class="img-resize" src="https://ibm.box.com/shared/static/vaihxpq9m31n7gjxbp4pl3sm6cyleovh.png" alt=""></a> 
+	</div>
+</div>
+<div class="general">
+	<!--<table class="header" width="100%">
+		<tbody>
+			<tr>
+				<td>
+					<table>
+						<tbody>
+							<tr>
+								<td style="font-weight: bold; font-size: 15px">Global Accounting Signature Generator</td>
+							</tr>
+							<tr>
+								<td style="padding-top: 10px">   </td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+				<td><a href="https://w3.ibm.com/w3publisher/act-count-think"><img style="height:auto; width:135px" id="logo_main" src="logo_hd.png" alt="" /></a></td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<table style="padding-left: 21px; padding-top: 12px">
+		<tr>
+			<td><b>Before proceeding, read carefully these instructions:</b></td>
+		</tr>
+		<tr>
+			<td style="padding-top: 10px"><span style="color: red">*</span><span style="color: red">*</span><span style="color: red">*</span> Supports Google Chrome, Firefox and Microsoft Edge internet explorers. Does not support Safari.</td>
+		</tr>
+		<tr>
+			<td style="padding-top: 10px">1. Fill the below form with your information.</td>
+		</tr>
+		<tr>
+			<td style="padding-top: 10px">2. Click "Generate Signature" and you will be redirected to the signature. After it is generated, right click in the signature and select "Save Page As". Then save it into "C:\Notes\Data".</td>
+		</tr>
+		<tr>
+			<td style="padding-top: 10px">3. After completing the previous steps; To configure the signature in the Lotus Notes email, please follow these <a href="Instructions.html" target="_blank">instructions</a>.</td>
+		</tr>
+	</table>
+	-->
+
+	<div class="signature_form">
+		<form class="formulario" method="get" onsubmit="return signature_Alert()" id="submitButton">
+		<table>
+			<!-- Filas -->
+			<tr>
+				<td>Closing </td>
+				<td><input type="text" name="closing" id="closing"></td>
+				<td><textarea name="ml" id="name2" style="margin-bottom: 10px" disabled=true>e.g. Best Regards,</textarea></td>
+			</tr>
+
+			<tr>
+				<td>Name <span style="color: red">*</span></td>
+				<td><input type="text" name="name" id="name" required></td>
+				<td><textarea name="" id="name2" disabled=true>e.g. John Doe</textarea></td>
+			</tr>
+
+			<tr>
+				<td style="padding-top: 8px;">Position <span style="color: red">*</span></td>
+				<td><input type="text" name="position" id="position" required></td>
+				<td><textarea name="pos" id="name2" disabled=true>e.g. Analyst, IBM Accounting Controls</textarea></td>
+			</tr>
+
+			<tr>
+				<td>Primary Phone</td>
+				<td><input type="text" name="phone" id="phone"></td>
+				<td><textarea name="pho" id="name2" disabled=true>e.g. +54-11-5286-1234</textarea></td>
+			</tr>
+
+			<tr>
+				<td>Mobile </td>
+				<td><input type="text" name="mobile" id="mobile"></td>
+				<td><textarea name="mob" id="name2" disabled=true>e.g. +54-911-1234-5678</textarea></td>
+			</tr>
+
+			<tr>
+				<td style="padding-top: 7px; white-space: nowrap;">ITN (IP Telephone Number) </td>
+				<td><input type="text" name="itn" id="itn"></td>
+				<td><textarea name="tl" id="name2" disabled=true>e.g. 58401234</textarea></td>
+			</tr>
+
+			<tr>
+				<td style="padding-top: 5px">T/L (Tieline) </td>
+				<td><input type="text" name="tieline" id="tieline"></td>
+				<td><textarea name="tl" id="name2" disabled=true>e.g. 840-1234</textarea></td>
+			</tr>
+			
+			<tr>
+				<td style="padding-top: 5px; white-space: nowrap;">Serial Number + Country Nbr <span style="color: red">*</span></td>
+				<td><input type="text" name="serial_nbr" id="serial_nbr" required ></td>
+				<td><textarea name="ser_nbr" id="name2" disabled=true>e.g. 052230613</textarea></td>
+			</tr>
+			
+			<tr>
+				<td >Webex ID <img onclick="alert('Enter https://ibm.webex.com, sign-in, enter your Personal Room, the Webex ID will appear there, copy and paste it into the form field.');" src="https://img.icons8.com/windows/22/000000/info.png"></td>
+				<td><input type="text" name="webex" id="webex"></td>
+				<td><textarea name="ser_nbr" id="name2" class="preview" disabled=true>e.g. johndoe</textarea></td>
+			</tr>
+			
+			<tr>
+				<td>Slack Member ID <img onclick="alert('Open the Slack application, select `Profile & account`, click on the drop-down menu icon (Three dots), copy the member ID and paste it into the form field.');" src="https://img.icons8.com/windows/22/000000/info.png"></td>
+				<td><input type="text" name="slack" id="slack"></td>
+				<td><textarea name="ser_nbr" id="name2" class="preview2" disabled=true>e.g. D48TWHZB7</textarea></td>
+			</tr>
+			
+			<tr>
+				<td>E-mail <span style="color: red">*</span></td>
+				<td><input type="text" name="mail" id="mail" required></td>
+				<td><textarea name="ml" id="name2" disabled=true>e.g. johndoe@ar.ibm.com</textarea></td>
+			</tr>
+			
+			<tr>
+				<td>Office Number </td>
+				<td><input type="text" name="office" id="office"></td>
+				<td><textarea name="ml" id="name2" disabled=true>e.g. 9C-48M-2</textarea></td>
+			</tr>
+			
+			<tr>
+				<td style="padding-top: 5px">Select your region <span style="color: red">*</span><br> 
+				<input type="radio" class="radioBtn" name="radio" id="Radio" value="BA" required checked> Buenos Aires <br>
+				<input type="radio" class="radioBtn" name="radio" id="Radio" value="KL" required> Kuala Lumpur <br>
+				<input type="radio" class="radioBtn" name="radio" id="Radio" value="BR" required> Bratislava <br>
+				<input type="radio" class="radioBtn" name="radio" id="Radio" value="Other" required> Other</td>
+			</tr>
+			
+			<tr class="CHQ_other" style="display:none">
+				<td>Business Name <span style="color: red">*</span></td>
+				<td><input type="text" name="office" class="bus_name" id="bus_name"></td>
+				<td><textarea name="ml" id="name2" disabled=true>e.g. IBM Corporation</textarea></td>
+			</tr>
+			
+			<tr class="CHQ_other" style="display:none">
+				<td>Business Address <span style="color: red">*</span></td>
+				<td><input type="text" name="office" class="bus_addr" id="bus_addr"></td>
+				<td><textarea name="ml" id="name2" disabled=true>e.g. 1 New Orchard Road</textarea></td>
+			</tr>
+			
+			<tr class="CHQ_other" style="display:none; padding-right: 2px">
+				<td>City, State/Province/ <br>Region Zip Code <span style="color: red">*</span> </td>
+				<td><input type="text" name="office" class="bus_city" id="bus_city"></td>
+				<td><textarea name="ml" id="name2" disabled=true>e.g. Armonk, NY 10504-1722</textarea></td>
+			</tr>
+			
+			<tr>
+				<td style="padding-top: 15px"><span>Personalize banner color:</span> <br>
+					<input type="radio" class="radioBtn_banner" name="radio_banner" id="Radio_banner" value="Act" checked> Act <br>
+					<input type="radio" class="radioBtn_banner" name="radio_banner" id="Radio_banner" value="Count"> Count <br>
+					<input type="radio" class="radioBtn_banner" name="radio_banner" id="Radio_banner" value="Think"> Think <br>
+					<input type="radio" class="radioBtn_banner" name="radio_banner" id="Radio_banner" value="No_banner"> No banner
+				</td>
+				<td style="padding-top: 15px">
+					<img style="height: 100%; width: 100%" src="https://ibm.box.com/shared/static/viu35bd5yoj20qtq0fflzgx1lc5abbnj.png" alt=""><br>
+					<img style="height: 100%; width: 100%" src="https://ibm.box.com/shared/static/uwgm0edqa1f8lh5bzq5mywc5i3o5rtge.png" alt=""><br>
+					<img style="height: 100%; width: 100%" src="https://ibm.box.com/shared/static/7jyw04bm6zgnlilbw4kvw5cg7qv5nkge.png" alt="">
+				</td>
+			</tr>
+			<!--<tr>
+				<td style="padding-top: 13px">Personalize banner color: <br> 
+					<input type="radio" class="radioBtn2" name="radio2" id="Radio" value="Act">Act<br>
+					<input type="radio" class="radioBtn2" name="radio2" id="Radio" value="Count">Count <br>
+					<input type="radio" class="radioBtn2" name="radio2" id="Radio" value="Think">Think <br>
+				</td>
+				<td style="padding-top: 32px">
+					<img style="height: 100%; width: 100%" src="https://ibm.box.com/shared/static/viu35bd5yoj20qtq0fflzgx1lc5abbnj.png" alt=""><br>
+					<img style="height: 100%; width: 100%" src="https://ibm.box.com/shared/static/uwgm0edqa1f8lh5bzq5mywc5i3o5rtge.png" alt=""><br>
+					<img style="height: 100%; width: 100%" src="https://ibm.box.com/shared/static/7jyw04bm6zgnlilbw4kvw5cg7qv5nkge.png" alt="">
+				</td>
+			</tr>-->
+
+			<tr>
+				<td style="padding-top: 13px">
+					<span><span style="color: red">*</span> Required fields</span><br><br>
+					<input type="submit" value="Generate Signature">
+				</td>
+			</tr>
+		</table>
+	</form> 
+	
+	</div>
+</div>
+<hr style="background-color: black; margin: 0 auto; width: 100%; height: 50px; margin-top: 30px; ">
+<script>
+$('input[type="radio"]').on("change", function(){
+       if($(this).attr("value")=="Other"){
+            $(".CHQ_other").show('slow');
+			$(".bus_name").prop('required',true);
+			$(".bus_addr").prop('required',true);
+			$(".bus_city").prop('required',true);
+        }
+		if($(this).attr("value")=="BA"){
+            $(".CHQ_other").hide('slow');
+			$(".bus_name").prop('required',false);
+			$(".bus_addr").prop('required',false);
+			$(".bus_city").prop('required',false);
+	    }
+		if($(this).attr("value")=="KL"){
+            $(".CHQ_other").hide('slow');
+			$(".bus_name").prop('required',false);
+			$(".bus_addr").prop('required',false);
+			$(".bus_city").prop('required',false);
+        }
+		if($(this).attr("value")=="BR"){
+            $(".CHQ_other").hide('slow');
+			$(".bus_name").prop('required',false);
+			$(".bus_addr").prop('required',false);
+			$(".bus_city").prop('required',false);
+        }
+   
+    });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lotus Notes Instructions</title>
+	<link href="styles.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600&display=swap" rel="stylesheet">
+</head>
+<script src="/javascripts/application.js" type="text/javascript" charset="utf-8" async defer></script>
+<script>
+	$(function() {
+    
+	    $(".button").on("click", function( e ) {
+	        
+	        e.preventDefault();
+	    
+	        $("body, html").animate({ 
+	            scrollTop: $( $(this).attr('href') ).offset().top 
+	        }, 600);
+	        
+	    });
+	        
+	});
+</script>
+
+<body>
+<table align="center" style="text-align: center; border-style: solid; border-width: 1px; background-color: #F7F9FA; font-family: 'IBM Plex Sans', sans-serif;font-size:11pt; padding: 10px">
+	<tr>
+		<th><h2 style="border: 0px; font-size: 25px; font-family: 'IBM Plex Sans', sans-serif"><u>Steps to configure the signature in Lotus Notes mail</u></h2></th>
+	</tr>
+	<tr>
+		<td><h2 style="border: 0px; font-size: 20px; font-family: 'IBM Plex Sans', sans-serif">Select Operating System:</h2></td>
+	</tr>
+	<tr>
+		<td><a class="jumper" href="#windows" style="font-size: 20px">Windows</a></td>
+	</tr>
+	<tr>
+		<td><a class="jumper" href="#mac_moj" style="font-size: 20px">macOS Mojave</a></td>
+	</tr>
+	<tr>
+		<td><a class="jumper" href="#mac_cata" style="font-size: 20px">macOS Catalina</a></td>
+	</tr>
+	<tr>
+		<td><div id="windows" style="font-size: 22px; font-weight: bold; margin-top: 15px; background-color:#054ADA;font-style: italic;color: aliceblue">Windows</div></td>
+	</tr>
+	<tr>
+		<td style="padding-top: 10px">By now, you should have created your signature and stored it into <b>C:\Notes\Data</b>, so we are ready to configure it in Lotus Notes.</td>
+	</tr>
+	<tr>
+		<td style="padding-top: 20px"><span>1. To attach it in Lotus Notes mail, go to your mailbox and select "More / Preferences":</span><br>
+			<span><img style="width: 1050px; padding-top: 10px" src="https://ibm.box.com/shared/static/upefvjra4wqb6hz4nbejfzt9zk93v738.png" alt=""/></span><br>
+			<span><img style="width: 310px" src="https://ibm.box.com/shared/static/xd94cbg3f6haoll0tgiwb09tycg56c08.png" alt=""/></span>
+		</td>
+	</tr>
+	<tr>
+		<td style="padding-top: 20px"><span>2. Then go to the "Signature" tab, select "HTML or Image File". Click "Browse": </span><br>
+			<span><img style="width: 750px; padding-top: 10px" src="foto_1.bmp" alt=""/></span><br><br>
+			3. Search for the file "AccountingSignature.html", ensure that "Files of type" is "HTML Files". Click "Open": <br><br>
+			<span><img style="width: 600px" src="foto_2.bmp" alt=""/></span><br><br>
+			4. Once the "AccountingSignature.html" file is selected. Click "OK": <br><br>
+			<span><img style="width: 600px" src="foto_3.bmp" alt=""/></span>
+		</td>
+	</tr>
+	<tr>
+		<td><div id="mac_moj" style="font-size: 22px; font-weight: bold; background-color:#054ADA; font-style: italic;color: aliceblue; margin-bottom: 10px">macOS Mojave</div></td>
+	</tr>
+	<tr>
+		<td>
+			<span>At this time, you should have created and saved your signature in the “Documents” folder.</span>
+		</td>
+	</tr>
+	<tr>
+		<td style="padding-top: 20px"><span>1. To attach it in Lotus Notes mail, go to your mailbox and select "More / Preferences":</span><br>
+			<span><img style="width: 1050px; padding-top: 10px" src="https://ibm.box.com/shared/static/upefvjra4wqb6hz4nbejfzt9zk93v738.png" alt=""/></span><br>
+			<span><img style="width: 310px" src="https://ibm.box.com/shared/static/xd94cbg3f6haoll0tgiwb09tycg56c08.png" alt=""/></span> <br>
+			<span>2. Then go to the "Signature" tab, select "HTML or Image File". Click "Browse": </span><br>
+			<span><img style="width: 750px; padding-top: 10px" src="foto_1.bmp" alt=""/></span> <br><br>
+			<span>3. Search for the file "AccountingSignature.html", ensure that "HTML Files" is enabled. Click "Open":</span> <br>
+			<span><img style="width: 750px; padding-top: 10px" src="foto_2_mojave.bmp" alt=""/></span> <br><br>
+			<span>4. Once the "AccountingSignature.html" file is selected. Click "OK":</span> <br>
+			<span><img style="width: 750px; padding-top: 10px" src="foto_4_mojave.bmp" alt=""/></span> <br><br>
+		</td>
+	</tr>
+	<tr>
+		<td><div id="mac_cata" style="font-size: 22px; font-weight: bold; background-color:#054ADA; font-style: italic;color: aliceblue; margin-bottom: 10px">macOS Catalina</div></td>
+	</tr>
+	<tr>
+		<td>
+			<span>At this time, you should have created and saved your signature in the “Documents” folder.</span>
+		</td>
+	</tr>
+	<tr>
+		<td style="padding-top: 20px"><span>1. To attach it in Lotus Notes mail, go to your mailbox and select "More / Preferences":</span><br>
+			<span><img style="width: 1050px; padding-top: 10px" src="https://ibm.box.com/shared/static/upefvjra4wqb6hz4nbejfzt9zk93v738.png" alt=""/></span><br>
+			<span><img style="width: 310px" src="https://ibm.box.com/shared/static/xd94cbg3f6haoll0tgiwb09tycg56c08.png" alt=""/></span> <br>
+		</td>
+	</tr>
+		<tr>
+		<td style="padding-top: 20px">In order to setup your signature in macOS Catalina, go to the “Signature” tab, select “HTML or Image File” and type the following in the available space: “/Users/<a class="usernameInput" href="InstructionsUsername.html" target="_blank">username</a>/Library/Application Support/IBM Notes Data/AccountingSignature.html” (where <a class="usernameInput" href="InstructionsUsername.html" target="_blank">username</a> is your Account User Name, if you don’t know how to find it, click on the blue hotlink), then click “ok”. <span style="color: red; font-weight: bold">DO NOT HIT BROWSE!!!</span> <br><br>
+			Note: if you have saved the signature in a different location, use your preferred file location. <br><br>
+			<img style="width: 60%" src="foto_4_mojave.bmp" alt="">
+	</tr>
+</table>
+</body>
+</html>

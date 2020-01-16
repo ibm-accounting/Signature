@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>AccountingSignature</title>
+      <link href="styles.css" rel="stylesheet" type="text/css">
+      <link rel="shortcut icon" type="image/png" href="logo_hdx.png"/>
+	  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600&display=swap" rel="stylesheet">
+   </head>
+   <body>
+      <div id="tpl_normal_20160721084235" style="font-family: 'IBM Plex Sans', sans-serif;font-size:9pt;">
+         <table border="0" cellpadding="0" cellspacing="0" style="border:0;table-layout:auto;font-family: 'IBM Plex Sans', sans-serif;white-space:normal;width:650px;font-size:7pt" width="680px">
+            <tbody>
+               <tr>
+                  <td style="vertical-align: bottom;">
+                     <div class="vcard" style="margin:8px 0 8px 0"><span style="font-size:10pt" id="closingInput"></span><br /><br />
+                        <b><a href="#" id="bpmail" onclick="return bp_mail_link()" style="color:#054ADA; text-decoration:none"><span id='nameInput' style="color:#054ADA;font-size:13pt;text-decoration: none">Default</span></a></b><br />
+                        <span style="font-size:9pt" id='posInput'>Default</span>
+                     </div>
+                  </td>
+                  <td style="text-align: right; vertical-align: bottom;"><br />
+                     <span style="font-size:9pt"><a href="https://w3.ibm.com/w3publisher/act-count-think"><img alt="Act. Count. Think. Website" id="logo_main" src="logo_actualizado.png"/></a></span>
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+         <table cellpadding="0" cellspacing="0" style="padding-bottom: 5px;table-layout:auto;white-space:normal;color:#5f5f5f;width:650px;font-size:7pt" width="680px">
+            <tbody>
+               <tr>
+                  <td colspan="3">
+                     <hr style="border:0;color:#696969;background-color:#696969;height:1px;" />
+                  </td>
+               </tr>
+               <tr>
+                  <td style="vertical-align: top;font-family: 'IBM Plex Sans', sans-serif" width="620px">
+                    <!--Teléfono-->
+                    <b style="color:#054ADA" id="phoneContainer" >Phone: <font id="phoneInput" style="color: #5f5f5f; font-weight: normal">Default</font></b>
+                    <!--SEPARADOR-->
+                    <span id="phoneContainer_bar" style="color:#828181;font-weight: bold">|</span>
+                    <!--ITN-->
+					<span id="itnContainer" style="text-decoration: none;"><b style="color:#054ADA"> ITN: </b><font id="itnInput">Default</font></span>
+					<!--SEPARADOR-->
+                    <span id="itnContainer_bar" style="color:#828181;font-weight: bold">|</span>
+					<!--Tie-Line-->
+					<span id="tielineContainer" style="text-decoration: none;"><b style="color:#054ADA"> T/L: </b><font id="tieLineInput">Default</font></span>
+					<!--SEPARADOR-->
+                    <span id="tielineContainer_bar" style="color:#828181;font-weight: bold">|</span>
+                    <!--Mobile-->
+                    <span id="mobileInputContainer" style="text-decoration: none;"><b style="color: #054ADA"> Mobile: </b><font id="mobileInput">Default</font></span><span id="separator_br"><br></span>
+					<!--Mail-->
+					<b><font color="#054ADA">Email: </font></b><a id="mail_to" href="" style="text-decoration: none"><font id="mailInput" color="#5f5f5f">Default</font></a>
+					<!--Slack-->
+					<span id="slackContainer" style="text-decoration:none;font-weight:bold;color:#828181">| <a href="#" class="slackInput" id="slackInput" style="text-decoration: none; color:#054ADA"> Slack</a></span>
+					<!--Webex-->
+					<span id="webexContainer" style="text-decoration:none;font-weight:bold;color:#828181">| <a href="#" class="webexInput" id="webexInput" style="text-decoration: none; color:#054ADA"> Webex</a></span><br>
+					<!--Office-->
+					<span id="officeContainer" style="text-decoration: none;"><b style="color:#054ADA">Office: </b><font id="officeInput">Default</font></span>
+				  </td>
+                  <td align="right" style="vertical-align: top;font-family: 'IBM Plex Sans', sans-serif" width="348px"><span class="adr" style="font-size:7pt"><abbr class="type" title="work">
+					  <span id="bus_nameInput" class="enterprise" style="font-size:7pt">IBM Argentina SRL</span><br />
+					  <span id="bus_addrInput" class="street-address" style="font-size:7pt">Pte. Hipolito Yrigoyen 2149</span><br />
+	                  <span id="bus_cityInput" class="region" style="7pt;"> Buenos Aires, Martinez B1640HFQ</span>
+                  </td>
+               </tr>
+            </tbody>
+		</table>
+			<div style="overflow:hidden">
+				<img alt="Blue_bar" id="banner_bottom" style="padding-top: 5px; width:650px;" src="barra_hd_rsz.png"/>
+    	    </div>
+	  </div>
+
+<script>
+         var values = window.location.search.substring(1).split('&')
+         var closing = values[0].split('=')[1]
+         var name = values[1].split('=')[1]
+         var position = values[2].split('=')[1]
+         var phone = values[3].split('=')[1]
+         var mobile = values[4].split('=')[1]
+         var itn = values[5].split('=')[1]
+         var tieline = values[6].split('=')[1]
+         var serial = values[7].split('=')[1]
+		 var webex = values[8].split('=')[1]
+         var slack = values[9].split('=')[1]
+         var mail = values[10].split('=')[1]
+		 var office = values[11].split('=')[1]
+		 var radio_button = values[12].split('=')[1]	 
+		 var bus_name = values[13].split('=')[1]
+		 var bus_addr = values[14].split('=')[1]
+		 var bus_city = values[15].split('=')[1]
+		 var act_var = values[16].split('=')[1]
+
+		 closing = closing.replace(/\+/g, '%20');
+         closing = decodeURIComponent(closing);
+
+         name = name.replace(/\+/g, '%20');
+         name = decodeURIComponent(name); 
+         
+         position = position.replace(/\+/g, '%20');
+         position = decodeURIComponent(position);
+         
+         phone = phone.replace(/\+/g, '%20');
+         phone = decodeURIComponent(phone);
+         
+         mobile = mobile.replace(/\+/g, '%20');
+         mobile = decodeURIComponent(mobile);
+
+         itn = itn.replace(/\+/g, '%20');
+         itn = decodeURIComponent(itn);
+         
+         tieline = tieline.replace(/\+/g, '%20');
+         tieline = decodeURIComponent(tieline);
+		 
+		 serial = serial.replace(/\+/g, '%20');
+         serial = decodeURIComponent(serial);
+		 
+		 webex = webex.replace(/\+/g, '%20');
+         webex = decodeURIComponent(webex);
+		 
+		 slack = slack.replace(/\+/g, '%20');
+         slack = decodeURIComponent(slack);
+		 
+         mail = mail.replace(/\+/g, '%20');
+         mail = decodeURIComponent(mail);
+		 
+		 office = office.replace(/\+/g, '%20');
+         office = decodeURIComponent(office);
+		 
+		 radio_button = radio_button.replace(/\+/g, '%20');
+         radio_button = decodeURIComponent(radio_button);
+		 
+		 bus_name = bus_name.replace(/\+/g, '%20');
+         bus_name = decodeURIComponent(bus_name);
+		 
+		 bus_addr = bus_addr.replace(/\+/g, '%20');
+         bus_addr = decodeURIComponent(bus_addr);
+		 
+		 bus_city = bus_city.replace(/\+/g, '%20');
+         bus_city = decodeURIComponent(bus_city);
+
+         act_var = act_var.replace(/\+/g, '%20');
+         act_var = decodeURIComponent(act_var);
+
+
+
+         /* Geografías */
+         if (radio_button == "Other") {
+       		document.getElementById('bus_nameInput').innerHTML = bus_name;
+		 	document.getElementById('bus_addrInput').innerHTML = bus_addr;
+		 	document.getElementById('bus_cityInput').innerHTML = bus_city;
+         }
+		 if (radio_button == "KL") {
+		 	document.getElementById('bus_nameInput').innerHTML ="IBM Malaysia Sdn Bhd";
+		 	document.getElementById('bus_addrInput').innerHTML = "8, First Avenue, Persiaran Bandar Utama";
+		 	document.getElementById('bus_cityInput').innerHTML = "Petaling Jaya, Selangor Darul Ehsan 47800";
+         }
+		 if (radio_button == "BR") {
+		 	document.getElementById('bus_nameInput').innerHTML = "IBM International Services Centre s.r.o.";
+		 	document.getElementById('bus_addrInput').innerHTML = "Krasovského 14";
+		 	document.getElementById('bus_cityInput').innerHTML = "851 01 Bratislava, Slovakia";
+         }
+
+         /* Banner */
+         if (act_var == "Act") {
+       		document.getElementById('banner_bottom').src = "01barra_hd_rsz-02-act.png"
+         }
+		 if (act_var == "Think") {
+		 	document.getElementById('banner_bottom').src = "01barra_hd_rsz-01-think.png"
+         }
+
+		 if (act_var == "No_banner") {
+		    document.getElementById('banner_bottom').remove()
+         }
+
+         document.getElementById('closingInput').innerHTML = closing;
+         document.getElementById('nameInput').innerHTML = name;
+         document.getElementById('posInput').innerHTML = position;
+		 document.getElementById('mailInput').innerHTML = mail;
+		
+		 /* Tuve que posicionar office acá arriba para que funcione */	
+		 if (office.length < 1) {
+             document.getElementById('officeContainer').remove();
+         } else {
+		 	document.getElementById('officeInput').innerHTML = office;
+		 }
+
+		 if (phone.length < 1) {
+             document.getElementById('phoneContainer').remove();
+             document.getElementById('phoneContainer_bar').remove();
+         } else {
+		 	document.getElementById('phoneInput').innerHTML = phone;
+		 	if(itn.length < 1 && tieline.length < 1 && mobile.length < 1) {
+		 		document.getElementById('phoneContainer_bar').remove()
+		 	}
+		 }
+
+		 if (itn.length < 1) {
+             document.getElementById('itnContainer').remove();
+             document.getElementById('itnContainer_bar').remove();
+         } else {
+		 	document.getElementById('itnInput').innerHTML = itn;
+		 	if(tieline.length < 1 && mobile.length < 1) {
+		 		document.getElementById('itnContainer_bar').remove()
+		 	}
+		 }
+
+		 if (tieline.length < 1) {
+             document.getElementById('tielineContainer').remove();
+             document.getElementById('tielineContainer_bar').remove();
+         } else {
+		 	document.getElementById('tieLineInput').innerHTML = tieline;
+		 	if(mobile.length < 1) {
+		 		document.getElementById('tielineContainer_bar').remove()
+		 	}
+		 }
+
+		 if (mobile.length < 1) {
+             document.getElementById('mobileInputContainer').remove();
+         } else {
+		 	document.getElementById('mobileInput').innerHTML = mobile;
+		 }
+		 
+		 if(phone.length < 1 && itn.length < 1 && tieline.length < 1 && mobile.length < 1) {
+		 	var parent = document.getElementById('separator_br');
+		 	var var1 = parent.getElementsByTagName('br');
+
+		 	for(var i = var1.length; i--;) {
+			    var1[i].parentNode.removeChild(var1[i]);
+			}
+		 }
+
+		 if (webex.length < 1) {
+             document.getElementById('webexContainer').remove();
+         } else {
+         	webex_link = "https://ibm.webex.com/meet/"	
+			webex_user_link = webex_link.concat(webex)
+		 	document.getElementById("webexInput").href= webex_user_link;
+         }
+
+		 if (slack.length < 1) {
+             document.getElementById('slackContainer').remove();
+         } else {
+         	slack_link = "https://ibm.enterprise.slack.com/user/@"
+			slack_user_link = slack_link.concat(slack)
+		 	document.getElementById("slackInput").href= slack_user_link;
+         }
+		 
+		 mail_c = "mailto:";
+         mail_concat = mail_c.concat(mail);
+         document.getElementById("mail_to").href = mail_concat;
+		 
+		 bp_user_link = "https://w3.ibm.com/bluepages/profile.html?uid="
+         bp_user_link_country = bp_user_link.concat(serial)
+         document.getElementById("bpmail").href= bp_user_link_country;
+</script>
+     
+   </body>
+</html>

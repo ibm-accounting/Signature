@@ -1,0 +1,434 @@
+/* 0611.html file */
+
+#modalContainer {
+	background-color:rgba(0, 0, 0, 0.3);
+	position:absolute;
+	width:100%;
+	height:100%;
+	top:0px;
+	left:0px;
+	z-index:10000;
+	background-image:url(tp.png); /* required by MSIE to prevent actions on lower z-index elements */
+}
+
+#alertBox {
+	position:relative;
+	width:300px;
+	min-height:100px;
+	margin-top:50px;
+	border:1px solid #666;
+	background-color:#fff;
+	background-repeat:no-repeat;
+	background-position:20px 30px;
+}
+
+#modalContainer > #alertBox {
+	position:fixed;
+}
+
+#alertBox h1 {
+	margin:0;
+	font:bold 0.9em verdana,arial;
+	background-color:#054ADA;
+	color:#FFF;
+	border-bottom:1px solid #000;
+	padding:2px 0 2px 5px;
+}
+
+#alertBox p {
+	font: 0.75em verdana,arial;
+	height:55px;
+	padding-left:5px;
+	margin-left:3px;
+}
+
+#alertBox #closeBtn {
+	display:block;
+	position:relative;
+	margin:5px auto;
+	padding:7px;
+	border:0 none;
+	width:70px;
+	font:0.7em verdana,arial;
+	text-transform:uppercase;
+	text-align:center;
+	color:#FFF;
+	background-color:#054ADA;
+	border-radius: 3px;
+	text-decoration:none;
+}
+
+/* unrelated styles */
+
+#mContainer {
+	position:relative;
+	width:600px;
+	margin:auto;
+	padding:5px;
+	border-top:2px solid #000;
+	border-bottom:2px solid #000;
+	font:0.7em verdana,arial;
+}
+
+h1,h2 {
+	margin:0;
+	padding:4px;
+	font:bold 1.5em verdana;
+	border-bottom:1px solid #000;
+}
+
+code {
+	font-size:1.2em;
+	color:#069;
+}
+
+#credits {
+	position:relative;
+	margin:25px auto 0px auto;
+	width:350px; 
+	font:0.7em verdana;
+	border-top:1px solid #000;
+	border-bottom:1px solid #000;
+	height:90px;
+	padding-top:4px;
+}
+
+#credits img {
+	float:left;
+	margin:5px 10px 5px 0px;
+	border:1px solid #000000;
+	width:80px;
+	height:79px;
+}
+
+.important {
+	background-color:#F5FCC8;
+	padding:2px;
+}
+
+code span {
+	color:green;
+}
+/* end */
+
+html {
+  scroll-behavior: smooth;
+}
+
+.usernameInput{
+	text-decoration: none;
+	color:#054ADA;
+}
+
+A.usernameInput:link  {text-decoration: none; color:#054ADA}
+A.usernameInput:visited {text-decoration: none; color:#054ADA}
+A.usernameInput:hover {text-decoration: underline; color:#054ADA}
+A.usernameInput:active {text-decoration: none; color:#054ADA}
+
+.slackInput{
+	text-decoration: none;
+	color:#054ADA;
+}
+
+A.slackInput:link  {text-decoration: none; color:#054ADA}
+A.slackInput:visited {text-decoration: none; color:#054ADA}
+A.slackInput:hover {text-decoration: underline; color:#054ADA}
+A.slackInput:active {text-decoration: none; color:#054ADA}
+
+.webexInput{
+	text-decoration: none;
+	color:#054ADA;
+}
+
+A.webexInput:link {text-decoration: none; color:#054ADA}
+A.webexInput:visited {text-decoration: none; color:#054ADA}
+A.webexInput:hover {text-decoration: underline; color:#054ADA}
+A.webexInput:active {text-decoration: none; color:#054ADA}
+
+.jumper{
+	text-decoration: none;
+	color:#054ADA;
+}
+
+A.jumper:link {text-decoration: none; color:#054ADA}
+A.jumper:visited {text-decoration: none; color:#054ADA}
+A.jumper:hover {text-decoration: underline; color:#054ADA}
+A.jumper:active {text-decoration: none; color:#054ADA}
+
+.responsive {
+  width: 100%;
+  height: auto;
+}
+
+.img-resize {
+    width: 275px; /* you can use % */
+    height: auto;
+    margin-left: 10px;
+    margin-top: 12px;
+}
+
+.header_max{
+	width: 100%;
+	background-color: #F7F9FA;
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-size: 14px;
+	text-align: center;
+}
+
+.sub-header{
+	display: block;
+    font-size: 1.15em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+	padding-right: 45px;
+	padding-left: 45px;
+	text-align: justify;
+}
+
+.general {
+	margin: auto;
+	background-color: #F7F9FA;
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-size: 14px;
+	width: 1130px;
+}
+
+.header {
+	padding-bottom: 0.5px;
+	padding-left: 21px;
+	background-color: #DFF7FE;
+}
+
+.header #logo_main {
+	margin-left: 430px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.header #title_main {
+	float: left;
+}
+
+.subheader{
+	padding-left: 21px;
+}
+
+.signature_form {
+	padding-top: 15px;
+	padding-right: 25px;
+	padding-left: 20px;
+	padding-bottom: 25px;
+	border-style: solid;
+	border-width: 1px;
+	margin-left: 25px;
+	margin-top: 20px;
+}
+
+.signature_form #form_fields {
+	text-align: right;
+}
+
+.signature_form #name {
+	width: 450px;
+}
+
+.signature_form #name2 {
+	width: 370px;
+	margin-left: 20px;
+	background-color: #EAEAEA;
+	resize: none;
+	height: 18.5px;
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-size: 13px;
+}
+
+.signature_form #serial_nbr {
+	width: 450px;
+}
+
+.signature_form #serial_nbr2 {
+	width: 250px;
+	margin-left: 20px;
+	background-color: #EAEAEA;
+	resize: none;
+	height: 18.5px;
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-size: 13px;
+}
+
+#name2[name="pos"] {
+	margin-top: 9.5px;
+}
+
+#name2[name="ser_nbr"] {
+	margin-top: 9.5px;
+}
+
+#name2[name="pho"] {
+	margin-top: 9.5px;
+}
+
+#name2[name="mob"] {
+	margin-top: 9.5px;
+}
+
+#name2[name="tl"] {
+	margin-top: 9.5px;
+}
+
+#name2[name="ml"] {
+	margin-top: 9.5px;
+}
+
+.signature_form #position {
+	width: 450px;
+}
+
+.signature_form #serial_nbr {
+	width: 450px;
+}
+.signature_form #phone {
+	width: 450px;
+}
+
+.signature_form #mobile {
+	width: 450px;
+}
+
+.signature_form #tieline {
+	width: 450px;
+}
+
+.signature_form #mail {
+	width: 450px;
+}
+
+.signature_form #webex {
+	width: 450px;
+	margin-left: 13px;
+	margin-top: 10px;
+}
+
+.signature_form #slack {
+	width: 450px;
+	margin-left: 13px;
+	margin-top: 10px;
+}
+
+.signature_form #itn {
+	width: 450px;
+	margin-left: 13px;
+	margin-top: 10px;
+}
+
+.signature_form #closing {
+	width: 450px;
+	margin-left: 13px;
+}
+
+.signature_form #office {
+	width: 450px;
+	margin-left: 13px;
+	margin-top: 10px;
+}
+
+.signature_form #bus_name {
+	width: 450px;
+	margin-left: 13px;
+}
+
+.signature_form #bus_addr {
+	width: 450px;
+	margin-left: 13px;
+}
+
+.signature_form #bus_city {
+	width: 450px;
+	margin-left: 13px;
+}
+
+.logo {
+	float: right;
+}
+
+.formulario #name {
+	margin-left: 13px;
+}
+
+.formulario #position {
+	margin-left: 13px;
+	margin-top: 10px;
+}
+
+.formulario #serial_nbr {
+	margin-left: 13px;
+	margin-top: 10px;
+}
+
+.formulario #phone {
+	margin-left: 13px;
+	margin-top: 10px;
+}
+
+.formulario #mobile {
+	margin-left: 13px;
+	margin-top: 10px;
+}
+
+.formulario #tieline {
+	margin-left: 13px;
+	margin-top: 10px;
+}
+
+.formulario #mail {
+	margin-left: 13px;
+	margin-top: 10px;
+}
+
+.bottom_header {
+	margin-left: 25px;
+	margin-top: 23px;
+}
+
+/* signature.html file */
+
+.signature_general {
+	font-family: Arial;
+	margin-top: 25px;
+}
+
+.signature_middle #signature_logo img{
+	float: right;
+	width: 180px;
+	margin-right: 640px;
+	margin-top: -15px;
+}
+
+.signature_middle #signature_details {
+	float: left;
+	margin-top: 3.9px;
+}
+
+.signature_bottom {
+	font-size: 11px;
+	padding-top: 53px;
+}
+
+.signature_bottom #line {
+	margin-right: 20px;
+}
+
+.signature_bottom #signature_bottom_right {
+	text-align: right;
+	float: right;
+	padding-right: 640px;
+	margin-top: -5px;
+}
+
+.signature_bottom #signature_bottom_left {
+	text-align: left;
+	float: left;
+	margin-top: -5px;
+}
